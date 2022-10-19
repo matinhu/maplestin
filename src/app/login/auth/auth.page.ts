@@ -295,10 +295,9 @@ export class AuthPage implements OnInit, OnDestroy {
       } else {
         this.currentEarnings -= boss.mesos;
       }
+      this.saveSelectedItems();
+
     }, 100);
-
-    this.saveSelectedItems();
-
   }
 
   saveSelectedItems() {
