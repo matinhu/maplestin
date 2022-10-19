@@ -252,17 +252,18 @@ export class AuthPage implements OnInit, OnDestroy {
   }
 
   async ngOnInit() {
-    this.bosses = this.normalBosses.concat(this.weeklyBossess);
-
     this.loading = await this.loadingCtrl.create({
       message: 'Loading...',
       spinner: 'bubbles',
     });
 
+    await this.loading.present();
+    this.bosses = this.normalBosses.concat(this.weeklyBossess);
+
+
     for (const boss of this.bosses) {
       this.totalPossibleEarnings += boss.mesos;
     }
-    await this.loading.present();
 
     this.loadSelectedItems();
     this.startTimer();
