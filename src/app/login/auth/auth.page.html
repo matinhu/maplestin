@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let boss of bosses">
+
+      <ion-avatar slot="start">
+        <img [src]="boss.img" [alt]="boss.name">
+      </ion-avatar>
+
+      <ion-label>
+        {{boss.name}}
+        <p>{{boss.value}}</p>
+      </ion-label>
+
+      <ion-badge slot="end" *ngIf="boss.weekly"> Weekly </ion-badge>
+
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>
