@@ -1,26 +1,69 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Login</ion-title>
+    <ion-avatar slot="start">
+      <img src="assets/icon/favicon.ico" alt="Maple Stin.">
+    </ion-avatar>
+    <ion-title>Bosses/Dailies</ion-title>
+    <ion-button slot="end" color="light" shape="round" size="small" (click)="selectAll()">Select All</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div slot="fixed" class="fixed-current-time"> {{gmtNow | date: 'hh:mm:ss'}} </div>
+  <div slot="fixed" class="fixed-mesos-value">Current earnings: {{currentEarnings | number}}</div>
+
+
   <ion-list>
+
+    <!-- DAILIES -->
+    <ion-toolbar color="success">
+      <ion-title>Dailies</ion-title>
+    </ion-toolbar>
+
+    <ion-item *ngFor="let daily of dailies">
+
+      <ion-avatar slot="start">
+        <img [src]="'assets/dailies/' + daily.img" [alt]="daily.name">
+      </ion-avatar>
+
+      <ion-checkbox slot="start" (ionChange)="calculateEarnings(daily, $event)" [checked]="daily.checked">
+      </ion-checkbox>
+
+      <ion-label>
+        {{daily.name}}
+        <p>{{daily.mesos | number}}</p>
+      </ion-label>
+
+      <ion-badge slot="end" *ngIf="daily.info"> {{daily.info}} </ion-badge>
+    </ion-item>
+
+    <!-- BOSSES -->
+    <ion-toolbar color="success">
+      <ion-title>Bosses</ion-title>
+    </ion-toolbar>
     <ion-item *ngFor="let boss of bosses">
 
       <ion-avatar slot="start">
-        <img [src]="boss.img" [alt]="boss.name">
+        <img [src]="'assets/bossess/' + boss.img" [alt]="boss.name">
       </ion-avatar>
+
+      <ion-checkbox slot="start" (ionChange)="calculateEarnings(boss, $event)" [checked]="boss.checked"></ion-checkbox>
 
       <ion-label>
         {{boss.name}}
-        <p>{{boss.value}}</p>
+        <p>{{boss.mesos | number}}</p>
       </ion-label>
 
       <ion-badge slot="end" *ngIf="boss.weekly"> Weekly </ion-badge>
-
     </ion-item>
 
-
   </ion-list>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="tertiary">
+    <ion-title slot="start">Total: {{totalPossibleEarnings| number}} </ion-title>
+  </ion-toolbar>
+</ion-footer>

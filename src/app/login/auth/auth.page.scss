@@ -1,0 +1,23 @@
+.fixed-mesos-value {
+  padding: 5px;
+  border: solid 1px #ff7200;
+  width: 100%;
+  color: black;
+  text-align: -webkit-center;
+  background: radial-gradient(#ff7200, #f6af77);
+  font-weight: 600;
+  top: 22px;
+}
+.fixed-current-time {
+  padding: 0px;
+  border: solid 1px #323232;
+  width: 100%;
+  color: #b3b3b3;
+  text-align: -webkit-center;
+  background: #323232;
+  font-weight: 600;
+}
+
+ion-content {
+  --offset-top: -50px !important;
+}
