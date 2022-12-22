@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./login/auth/auth.module').then( m => m.AuthPageModule)
   },
+  {
+    path: 'map-navigator',
+    loadChildren: () => import('./comps/map-navigator/map-navigator.module').then( m => m.MapNavigatorPageModule)
+  },
 ];
 
 @NgModule({

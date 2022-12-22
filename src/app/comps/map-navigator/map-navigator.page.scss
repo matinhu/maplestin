@@ -1,0 +1,11 @@
+.copyStr {
+  border-radius: 5px;
+  border: solid 1px orange;
+  padding: 10px;
+  margin: 2rem;
+  width: fit-content;
+  cursor: pointer;
+  &:hover{
+    background-color: #ffefd1;
+  }
+}

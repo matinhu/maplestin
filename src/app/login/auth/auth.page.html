@@ -3,15 +3,30 @@
     <ion-avatar slot="start">
       <img src="assets/icon/favicon.ico" alt="Maple Stin.">
     </ion-avatar>
-    <ion-title>Bosses/Dailies</ion-title>
-    <ion-button slot="end" color="light" shape="round" size="small" (click)="selectAll()">Select All</ion-button>
+    <ion-title>Boss/Daily - {{total}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+
   <div slot="fixed" class="fixed-current-time"> Server Time: {{gmtNow | date: 'hh:mm:ss'}} </div>
-  <div slot="fixed" class="fixed-mesos-value">Current earnings: {{currentEarnings | number}}</div>
+  <div slot="fixed" class="fixed-mesos-value">
+    Current earnings: {{currentEarnings | number}}
+
+<br>
+    <ion-button slot="end" color="danger" size="large" (click)="reboot = !reboot;">Reboot</ion-button>
+
+    <div slot="fixed" class="select-items">
+      <ion-button slot="end" color="warning" size="small" (click)="selectItems('daily')">D</ion-button>
+      <ion-button slot="end" color="warning" size="small" (click)="selectItems('weekly')">W</ion-button>
+      <ion-button slot="end" color="warning" size="small" (click)="selectItems('all')">A</ion-button>
+      <ion-button slot="end" color="warning" size="small" (click)="selectItems('none')">X</ion-button>
+    </div>
+
+  </div>
+
+  
 
 
   <ion-list>
@@ -60,10 +75,11 @@
 
   </ion-list>
 
+
 </ion-content>
 
 <ion-footer>
   <ion-toolbar color="tertiary">
-    <ion-title slot="start">Total: {{totalPossibleEarnings| number}} </ion-title>
+    <ion-title slot="start">Total: {{totalPossibleEarnings| number}}  | Reboot: {{reboot ? 'YES' : 'NO'}}</ion-title>
   </ion-toolbar>
 </ion-footer>

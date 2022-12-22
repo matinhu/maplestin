@@ -1,0 +1,16 @@
+.menu-item {
+  border-radius: 5px;
+  border: solid 1px #f47171;
+  padding: 5px;
+  margin: 5px;
+  line-height: 3;
+  cursor: pointer;
+  &:hover {
+    background-color: #f4717186;
+    border-color: #e78c3786;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+}

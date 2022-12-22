@@ -1,3 +1,13 @@
+.fixed-current-time {
+    padding: 2px;
+    border: solid 1px #323232;
+    width: 100%;
+    color: #b3b3b3;
+    text-align: -webkit-center;
+    background: #323232;
+    font-weight: 600;
+    font-size: 12px;
+  }
 .fixed-mesos-value {
   padding: 5px;
   border: solid 1px #ff7200;
@@ -8,8 +18,8 @@
   font-weight: 600;
   top: 22px;
 }
-.fixed-current-time {
-  padding: 2px;
+
+.fixed-select-items {
   border: solid 1px #323232;
   width: 100%;
   color: #b3b3b3;
@@ -17,8 +27,9 @@
   background: #323232;
   font-weight: 600;
   font-size: 12px;
+  top: 44px;
 }
 
 ion-content {
-  --offset-top: -50px !important;
+  --offset-top: -88px !important;
 }

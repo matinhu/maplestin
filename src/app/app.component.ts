@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+
+  menus = [
+    { title: 'Boss/Daily Calculator', path: 'auth' },
+    { title: 'Map Generator', path: 'map-navigator' },
+  ];
+  constructor() { }
+
 }
